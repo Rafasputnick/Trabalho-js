@@ -5,50 +5,56 @@ var textoNotas = [];
 var qntdStars = '';
 var estadoJogo = '';
 
-/* Função chamada ao clicar no botão "Gravar lembrete" */
-function gravarNota() {
-    /* Obtém os valores digitados nas caixas de texto (título)
-        e descrição da nota */
-    const titulo = document.querySelector("#titulo").value;
-    const texto = document.querySelector("#texto").value;
-    
-    /* Adiciona os titulos e descrições no final do array */
-    tituloNotas.push(titulo + '  |  ' + qntdStars + '  |  ' + estadoJogo);
-    textoNotas.push(texto);
+function addStar(qntd){
+    if (qntd==1){
+       qntdStars = '★ (1-5)';
+    }else{
+        if(qntd==2){
+           qntdStars = '★★ (2-5)';
+        }else{
+            if(qntd==3){
+               qntdStars = '★★★ (3-5)';
+            }else{
+                if(qntd==4){
+                   qntdStars = '★★★★ (4-5)';
+                }else{
+                    qntdStars = '★★★★★ (5-5)';
+                }
+            }
+        }
+    }
+}
 
-    /* Solicita a atualização da tela */
+function addNote() {
+    const titulo = document.querySelector("#titulo").value;
+    const comentario = document.querySelector("#comentario").value;
+
+    tituloNotas.push(titulo + '  |  ' + qntdStars + '  |  • ' + estadoJogo);
+    textoNotas.push(comentario);
+
     atualizarListaNotas();
 }
 
 /* Função utilizada para atualizar a lista de notas com os
     textos e títulos que estão nos arrays */
 function atualizarListaNotas() {
-    /* Obtém todos os itens de notas sendo exibidos */
     const elements = document.querySelectorAll(".item-show");
 
-    /* Itera pelos itens e solicita a remoção dos mesmos */
     for (let i = 0; i < elements.length; i++) {
         elements[i].parentNode.removeChild(elements[i]);
     }
 
-    /* Com a lista visual de itens "limpa", itera pelo array de notas
-        usando os títulos como referência */
     for (let i = 0; i < tituloNotas.length; i++) {
-        /* Clona o item de referência para criar um item novo */
         const cloneItem = document.querySelector("#base-item").cloneNode(true);
-        /* Associa o item de referência ao container de listas */
         const parent = document.querySelector("#content");
         parent.appendChild(cloneItem);
-
-        /* Faz o item aparecer */
         cloneItem.className = "item-show";
-
-        /* Configura o titulo e o texto das notas com base no item do array */
-        cloneItem.querySelector(".item-title").textContent = tituloNotas[i];
-        cloneItem.querySelector(".item-text").textContent = textoNotas[i];
+        cloneItem.querySelector(".item-title").textContent = i + '. ' + tituloNotas[i];
+        cloneItem.querySelector(".item-comentario").textContent = textoNotas[i];
     }
 }
 
+/* Função para a parte de avaliação (estrelas), alterando o texto e o que irá enviar para o lembrete */
 function starOnMouseOver(qntd){
     const star1 = document.querySelector('#star1');
     const star2 = document.querySelector('#star2');
@@ -93,3 +99,25 @@ function starOnMouseOver(qntd){
         }
     }
 }
+
+function editNote() {
+    const indice = parseInt(prompt('Digite o índice do lembrete que deseja editar'));
+    const titulo = prompt('Digite o título');
+    const estado = prompt('Digite o estado | sugerido : desejado, comprado, jogando, zerado ou platinado; ');
+    const stars = parseInt(prompt('Digite a quantidade de estrelas desejada'));  
+    addStar(stars);
+    const comentario = prompt('Digite o comentário');
+    tituloNotas[indice] = titulo + '  |  ' + qntdStars + '  |  • ' + estado;
+    textoNotas[indice] = comentario;
+    atualizarListaNotas();
+}
+
+function deleteNote(){
+    const indice = parseInt(prompt('Digite o índice do lembrete que deseja excluir'));
+    const confirmar = confirm ('Tem certeza?');
+    if (confirmar){
+        tituloNotas.splice(indice, 1);
+    textoNotas.splice(indice, 1); 
+    atualizarListaNotas();
+    }
+}    

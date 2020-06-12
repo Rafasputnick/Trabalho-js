@@ -28,7 +28,7 @@ body {
     color: white;
     font-weight: bold;
     border-radius: 3px;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 2px gray;
 }
 
 #tituloApp {
@@ -55,7 +55,7 @@ body {
     border-radius: 5px 5px 0 0;
 }
 
-.item-text {
+.item-comentario {
     padding: 10px;
     background-color: #F5F5F6;
     color: black;
@@ -87,5 +87,13 @@ legend{
     font-weight: bold;
     margin:10px;
     text-align: center;
-    font-size: ;
+    font-size: 20px;
+}
+
+.star:hover{
+    cursor: pointer;
+}
+
+.bottom:hover{
+    cursor: pointer;   
 }

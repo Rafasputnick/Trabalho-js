@@ -11,7 +11,7 @@
                 <h2 id="tituloApp">Registro de Jogos </h2>
                 
                 <legend> Titulo do jogo </legend>
-                <input placeholder="Nome do Jogo" type="text" id="titulo" class="caixaTexto"></input>
+                <input type="text" id="titulo" class="caixaTexto" autofocus></input>
 
                 <legend> Qual o estado do Jogo? </legend>
                 <input type="radio" name="estadoJogo" onclick=" estadoJogo = 'Desejado' " class="estadoJogo">
@@ -27,19 +27,19 @@
 
                 <legend> Deixe sua avaliação </legend>
                 <div id="classificacaoHeader">
-                    <div onmouseover="starOnMouseOver(1); qntdStars = '★ (1-5)';" id="star1" class="star"> ☆ </div>
-                    <div onmouseover="starOnMouseOver(2); qntdStars = '★★ (2-5)';" id="star2" class="star"> ☆ </div>
-                    <div onmouseover="starOnMouseOver(3); qntdStars = '★★★ (3-5)';" id="star3" class="star"> ☆ </div>
-                    <div onmouseover="starOnMouseOver(4); qntdStars = '★★★★ (4-5)';" id="star4" class="star"> ☆ </div>
-                    <div onmouseover="starOnMouseOver(5); qntdStars = '★★★★★ (5-5)';" id="star5" class="star"> ☆ </div>
+                    <div onmouseover="starOnMouseOver(1);" onclick="addStar(1);" id="star1" class="star" > ☆ </div>
+                    <div onmouseover="starOnMouseOver(2);" onclick="addStar(2);" id="star2" class="star"> ☆ </div>
+                    <div onmouseover="starOnMouseOver(3);" onclick="addStar(3);" id="star3" class="star"> ☆ </div>
+                    <div onmouseover="starOnMouseOver(4);" onclick="addStar(4);" id="star4" class="star"> ☆ </div>
+                    <div onmouseover="starOnMouseOver(5);" onclick="addStar(5);" id="star5" class="star"> ☆ </div>
                 </div>
 
                 <legend> Digite um comentário </legend>
-                <textarea id="texto" placeholder="Descrição" class="caixaTexto"></textarea>
+                <textarea id="comentario" class="caixaTexto" rows="5"></textarea>
 
-                <button class="bottom" onclick="gravarNota()">Gravar</button>
-                <button class="bottom" onclick="atualizarListaNotas()">Editar</button>
-                <button class="bottom" onclick="gravarNota()">Excluir</button>
+                <button class="bottom" onclick="addNote()">Gravar</button>
+                <button class="bottom" onclick="editNote()">Editar</button>
+                <button class="bottom" onclick="deleteNote()">Excluir</button>
                 <button class="bottom" onclick="alert('Desenvolvido por Rafael Nascimento Lourenço; Cursando : Bacharelaado em ciência da computação; Matéria : Programação WEB')">Sobre o app</button>
             </div>
             <div id="content">
@@ -47,7 +47,7 @@
                     <div class="item-title">
                         Title
                     </div>
-                    <div class="item-text">
+                    <div class="item-comentario">
                         Text
                     </div>
                 </div>
