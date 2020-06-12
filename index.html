@@ -10,9 +10,11 @@
             <div id="header">
                 <h2 id="tituloApp">Registro de Jogos </h2>
                 
+                <!-- Título -->
                 <legend> Titulo do jogo </legend>
                 <input type="text" id="titulo" class="caixaTexto" autofocus></input>
 
+                <!-- Estado do jogo -->
                 <legend> Qual o estado do Jogo? </legend>
                 <input type="radio" name="estadoJogo" onclick=" estadoJogo = 'Desejado' " class="estadoJogo">
                 <label> Quer? </label>
@@ -25,6 +27,7 @@
                 <input type="radio" name="estadoJogo" onclick=" estadoJogo = 'Platinado' " class="estadoJogo">
                 <label> Platinou? </label>
 
+                <!-- Parte de estrelas/avaliação -->
                 <legend> Deixe sua avaliação </legend>
                 <div id="classificacaoHeader">
                     <div onmouseover="starOnMouseOver(1);" onclick="addStar(1);" id="star1" class="star" > ☆ </div>
@@ -34,19 +37,25 @@
                     <div onmouseover="starOnMouseOver(5);" onclick="addStar(5);" id="star5" class="star"> ☆ </div>
                 </div>
 
+                <!-- Comentário -->
                 <legend> Digite um comentário </legend>
                 <textarea id="comentario" class="caixaTexto" rows="5"></textarea>
 
+                <!-- Botões -->
                 <button class="bottom" onclick="addNote()">Gravar</button>
                 <button class="bottom" onclick="editNote()">Editar</button>
                 <button class="bottom" onclick="deleteNote()">Excluir</button>
                 <button class="bottom" onclick="alert('Desenvolvido por Rafael Nascimento Lourenço; Cursando : Bacharelaado em ciência da computação; Matéria : Programação WEB')">Sobre o app</button>
             </div>
+            <!-- div pai que serve para clonar itens -->
             <div id="content">
+                <!-- div base para clonar lembrete -->
                 <div id="base-item" class="item-hide">
+                    <!-- div onde irá ficar o conteúdo de título -->
                     <div class="item-title">
                         Title
                     </div>
+                    <!-- div onde irá ficar o conteúdo de comentário-->
                     <div class="item-comentario">
                         Text
                     </div>
