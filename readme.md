@@ -1,14 +1,17 @@
-#Programando em js
+# Programando em js
 
-##Itens estudados
+## Itens estudados
 
 - functions
 
-- árvore doom
+- árvore DOM
 
 - splice, push
 
 - cloneNode
 
-[Trabalho js][Aplicativo js]
-[Aplicativo js]: https://rafasputnick.github.io/Trabalho-js/ "Treino Js"
+![screenshot](https://imgur.com/Hg6tW5d)
+
+URL - [Link do Aplicativo](https://rafasputnick.github.io/Trabalho-js/ "Link do Aplicativo")
+
+Desenvolvido por [Rafael Nascimento Lourenço](https://www.linkedin.com/in/rafael-louren%C3%A7o-31212519b/ "Rafael Nascimento Lourenço")
