@@ -10,7 +10,7 @@
 
 - cloneNode
 
-![screenshot](https://imgur.com/Hg6tW5d)
+![screenshot](screenshot.jpg)
 
 URL - [Link do Aplicativo](https://rafasputnick.github.io/Trabalho-js/ "Link do Aplicativo")
 
